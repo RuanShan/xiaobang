@@ -37,17 +37,17 @@ $(function(){
         if (!error) {
             var loading = weui.loading('提交中...');
             var jsonArray = $("#new_message_form").serializeArray();
-            var jsonData = {}
+            var messageParam = {}
             jsonArray.forEach(function(kv){
-              jsonData[kv.name] = kv.value
+              messageParam[kv.name] = kv.value
             })
-            console.debug("jsonData",jsonArray, jsonData);
+            //console.debug("jsonData",jsonArray, messageParam);
             $.ajax({
               type: 'POST',
               url: XiaoBang.routes.createMssageUrl,
               contentType: "application/json", //必须这样写
               dataType:"json",
-              data:JSON.stringify(jsonData),//schoolList是你要提交是json字符串
+              data:JSON.stringify({message: messageParam }),//schoolList是你要提交是json字符串
               success:function (data) {
                 loading.hide();
                 weui.toast('提交成功', 3000);
