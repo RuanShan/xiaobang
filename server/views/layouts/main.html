@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{{ title }}}</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1343574_pp70p9qs4xs.css">
+    <link rel="stylesheet" href="/css/messages.css">
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/2.0.1/weui.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.2.1/weui.min.js"></script>
+
+    <script type="text/javascript" >
+      var XiaoBang = {}
+      XiaoBang.routes = {
+        createMssageUrl: '/api/messages'
+      }
+    </script>
+  </head>
+  <body >
+    <div id="page">
+      {{{@body}}}
+    </div>
+    <script type="text/javascript" src="/js/messages.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,86 @@
+<div class="content-padded">
+  <!--校园送货标题title-->
+  <div class="weui-flex">
+    <div class="weui-flex__item">
+      <div class="title">
+        <h2>小邦服务</h2>
+      </div>
+    </div>
+  </div>
+  <!--校园送货标题-ENDtitle-->
+
+  <div class="weui-flex">
+    <div id="from" class="weui-flex__item ">
+      <form id="new_message_form">
+
+        <div class="" style="">
+          <div class="weui-cell weui-cell_access weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd"><label class="weui-label">类型</label></div>
+            <div class="weui-cell__bd" id="showPicker">
+              <input id="message_title" name="title" required class="weui-input" readonly value="{{title}}">
+            </div>
+          </div>
+          <!--寝室-->
+          <div class="weui-cell ">
+            <div class="weui-cell__hd hint"><label for="game_delivery_room" class="weui-label"><span class="iconfont icon-account"></span>
+              </label></div>
+            <div class="weui-cell__bd">
+              <input name="username" required class="weui-input" placeholder="联系人姓名" emptyTips="请输入联系人姓名">
+            </div>
+          </div>
+
+
+          <!--收件人手机-->
+          <div class="weui-cell ">
+            <div class="weui-cell__hd hint"><label for="game_result_cellphone" class="weui-label"><span class="iconfont icon-phone"></span></label></div>
+            <div class="weui-cell__bd">
+              <input name="mobile" class="weui-input" placeholder="电话" type="tel" required pattern="[0-9]{8,11}" emptyTips="请输入电话号码"
+              notMatchTips="请输入正确的电话号码">
+            </div>
+          </div>
+          <!--收件人姓名-->
+          <div class="weui-cell ">
+            <div class="weui-cell__hd hint"><label for="game_result_realname" class="weui-label"><span class="iconfont icon-map"></label></div>
+            <div class="weui-cell__bd">
+              <input name="address" class="weui-input" placeholder="地址">
+            </div>
+          </div>
+          <!--取件短信-->
+          <div class="weui-cells__title colors">故障描述</div>
+            <div class="weui-cell ">
+              <div class="weui-cell__bd">
+                <textarea name="desc" class="weui-textarea" placeholder=" " rows="3" maxlength="500"></textarea>
+              </div>
+              <div class="weui-textarea-counter"><span name="length">0</span>/500</div>
+            </div>
+          <!--时间选择-->
+          <div class="weui-cell ">
+          </div>
+
+          <!--时间选择-END-->
+          <!--备注-->
+
+
+          <!--按钮-->
+          <div class="weui-flex">
+            <div class="weui-flex__item">
+                <button class="weui-btn weui-btn_primary" type="button" id="submitBtn">提 交</button>
+            </div>
+
+          </div>
+          <!--按钮END-->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="weui-form__extra-area">
+  <div class="weui-footer">
+
+    <p class="weui-footer__text">Copyright © 2019 小帮服务</p>
+  </div>
+</div>
+<script type="text/javascript">
+
+
+</script>

@@ -1,0 +1,39 @@
+body{
+  background-color: #fff;
+  height: 100%;
+
+}
+.title {
+    padding: 0 10px;
+    background-color: #8ec31f;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+}
+
+#from {
+  border: 1px solid darkgrey;
+  margin-top: 4px;
+  padding: 2px;
+}
+
+#new_message_form .weui-label{
+  width:80px;
+
+}
+#new_message_form .weui-cell:before{
+    left: 16px;
+    right: 16px;
+}
+
+#new_message_form  .weui-btn_primary{
+  background-color: #8ec31f;
+  margin-bottom: 32px;
+}
+
+#new_message_form  .weui-cell_select {
+    padding: 16px;
+}
+.content-padded {
+  padding: 15px;
+}

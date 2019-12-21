@@ -1,0 +1,13 @@
+[2019-10-16T22:45:33.661] [INFO] http - GET /api/backend/users/show - 180
+[2019-10-16T22:45:48.524] [INFO] http - GET /api/backend/terms/getTermInfo - 139
+[2019-10-16T22:45:48.606] [INFO] http - GET /api/backend/terms/getTermInfo - 37
+[2019-10-16T22:45:48.803] [INFO] http - POST /api/backend/photos/search - 64
+[2019-10-16T22:45:52.051] [INFO] http - GET /api/backend/game_rounds?page=1&limit=20&importance=undefined&title=undefined&type=undefined&sort=+id - 200
+[2019-10-16T22:46:34.275] [INFO] http - GET /api/backend/terms/getTermInfo - 67
+[2019-10-16T22:46:34.287] [INFO] http - GET /api/backend/game_rounds/1 - 188
+[2019-10-16T22:46:34.692] [INFO] http - POST /api/backend/photos/search - 80
+[2019-10-16T22:46:34.741] [INFO] http - POST /api/backend/photos/search - 99
+[2019-10-16T22:46:34.762] [INFO] http - POST /api/backend/photos/search - 113
+[2019-10-16T22:46:35.309] [INFO] http - POST /api/backend/albums/getAlbums - 164
+[2019-10-16T22:46:35.345] [INFO] http - GET /api/backend/game_rounds/getVoteStyle/1 - 53
+[2019-10-16T23:33:17.978] [INFO] http - GET /api/backend/users/show - 41

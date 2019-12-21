@@ -1,0 +1,9 @@
+[2019-11-11T16:54:19.898] [INFO] http - GET /gapi/dpgames/dpyiy/1b73cf31b46711e99a15f0def15e0392/getInfoDp - 813
+[2019-11-11T16:54:28.517] [INFO] http - GET /gapi/dpgames/dpyiy/1b73cf31b46711e99a15f0def15e0392/getInfoDp - 359
+[2019-11-11T16:54:41.646] [INFO] http - POST /gapi/dpgames/dpyiy/1b73cf31b46711e99a15f0def15e0392/getInfo - 900
+[2019-11-11T16:54:52.001] [INFO] http - POST /gapi/dpgames/dpyiy/1b73cf31b46711e99a15f0def15e0392/getInfo - 463
+[2019-11-11T17:14:44.935] [INFO] http - POST /gapi/dpgames/dpyiy/1b73cf31b46711e99a15f0def15e0392/getInfo - 521
+[2019-11-11T17:16:40.013] [INFO] http - POST /gapi/dpgames/dpyiy/1b73cf31b46711e99a15f0def15e0392/getInfo - 625
+[2019-11-11T17:16:40.311] [INFO] http - GET /gapi/dpgames/dpyiy/1b73cf31b46711e99a15f0def15e0392/getInfoDp - 147
+[2019-11-11T17:23:10.793] [INFO] http - GET /gapi/dpgames/dpyiy/1b73cf31b46711e99a15f0def15e0392/getInfoDp - 201
+[2019-11-11T17:23:11.480] [INFO] http - POST /gapi/dpgames/dpyiy/1b73cf31b46711e99a15f0def15e0392/getInfo - 599

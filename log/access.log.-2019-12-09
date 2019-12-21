@@ -1,0 +1,16 @@
+[2019-12-09T09:46:10.978] [INFO] http - POST /gapi/games/wastesorting/1b74daf7b46711e99a15f0def15e0394/getInfo - 947
+[2019-12-09T09:46:32.416] [INFO] http - POST /gapi/games/wastesorting/1b74daf7b46711e99a15f0def15e0394/setAchieve - 310
+[2019-12-09T09:47:55.785] [INFO] http - POST /gapi/games/wastesorting/1b74daf7b46711e99a15f0def15e0394/getInfo - 386
+[2019-12-09T09:48:26.023] [INFO] http - POST /gapi/games/wastesorting/1b74daf7b46711e99a15f0def15e0394/getInfo - 333
+[2019-12-09T09:48:35.238] [INFO] http - POST /gapi/games/wastesorting/1b74daf7b46711e99a15f0def15e0394/setAchieve - 288
+[2019-12-09T09:48:37.112] [INFO] http - POST /gapi/games/wastesorting/1b74daf7b46711e99a15f0def15e0394/getInfo - 358
+[2019-12-09T09:48:46.967] [INFO] http - POST /gapi/games/wastesorting/1b74daf7b46711e99a15f0def15e0394/setAchieve - 277
+[2019-12-09T09:48:48.985] [INFO] http - POST /gapi/games/wastesorting/1b74daf7b46711e99a15f0def15e0394/getInfo - 372
+[2019-12-09T09:49:06.462] [INFO] http - POST /gapi/games/wastesorting/1b74daf7b46711e99a15f0def15e0394/setAchieve - 249
+[2019-12-09T10:37:11.022] [INFO] http - POST /gapi/games/wastesorting/1b74daf7b46711e99a15f0def15e0394/getInfo - 459
+[2019-12-09T16:12:16.233] [INFO] http - POST /gapi/games/wastesorting/1b74daf7b46711e99a15f0def15e0394/getInfo - 948
+[2019-12-09T16:47:15.346] [INFO] http - POST /gapi/games/wastesorting/1b74daf7b46711e99a15f0def15e0394/setAchieve - 472
+[2019-12-09T16:47:17.112] [INFO] http - POST /gapi/games/wastesorting/1b74daf7b46711e99a15f0def15e0394/getInfo - 480
+[2019-12-09T16:47:25.858] [INFO] http - POST /gapi/games/wastesorting/1b74daf7b46711e99a15f0def15e0394/setAchieve - 313
+[2019-12-09T16:51:37.421] [INFO] http - POST /gapi/games/wastesorting/1b74daf7b46711e99a15f0def15e0394/getInfo - 507
+[2019-12-09T16:56:49.875] [INFO] http - POST /gapi/games/wastesorting/1b74daf7b46711e99a15f0def15e0394/setAchieve - 426

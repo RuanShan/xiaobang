@@ -1,0 +1,8 @@
+[2019-11-20T17:20:48.455] [INFO] http - POST /gapi/games/car/caadd1ce309cd14ac89bba6ee16417a4/getInfo - 2217
+[2019-11-20T17:21:00.548] [INFO] http - POST /gapi/games/car/caadd1ce309cd14ac89bba6ee16417a4/getInfo - 323
+[2019-11-20T17:21:08.976] [INFO] http - POST /gapi/base/car/caadd1ce309cd14ac89bba6ee16417a4/postmsg - 145
+[2019-11-20T17:22:00.407] [INFO] http - POST /gapi/games/car/caadd1ce309cd14ac89bba6ee16417a4/getInfo - 329
+[2019-11-20T17:22:08.307] [INFO] http - POST /gapi/base/car/caadd1ce309cd14ac89bba6ee16417a4/postmsg - 43
+[2019-11-20T17:22:22.534] [INFO] http - POST /gapi/games/car/caadd1ce309cd14ac89bba6ee16417a4/setAchieve - 459
+[2019-11-20T17:22:25.090] [INFO] http - POST /gapi/games/car/caadd1ce309cd14ac89bba6ee16417a4/getRanking - 241
+[2019-11-20T17:34:51.333] [INFO] http - POST /gapi/games/car/caadd1ce309cd14ac89bba6ee16417a4/getInfo - 1103

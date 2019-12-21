@@ -1,0 +1,17 @@
+[2019-12-19T19:44:24.622] [INFO] http - GET /gapi/dpgames/dpcounter/1/getInfoDp - 392
+[2019-12-19T19:48:51.780] [INFO] http - POST /gapi/dpqiandao/getInfoDp - 109
+[2019-12-19T19:48:52.112] [INFO] http - POST /gapi/dpqiandao/getAwardResult - 52
+[2019-12-19T19:48:52.122] [INFO] http - POST /gapi/dpqiandao/getAwardResultCount - 23
+[2019-12-19T19:48:54.237] [INFO] http - GET /gapi/dpgames/dpcounter/1/getInfoDp - 146
+[2019-12-19T19:51:47.832] [INFO] http - POST /gapi/dpqiandao/getInfoDp - 130
+[2019-12-19T19:51:48.143] [INFO] http - POST /gapi/dpqiandao/getAwardResult - 22
+[2019-12-19T19:51:48.166] [INFO] http - POST /gapi/dpqiandao/getAwardResultCount - 10
+[2019-12-19T19:51:51.103] [INFO] http - GET /gapi/dpgames/dpcounter/1/getInfoDp - 192
+[2019-12-19T19:52:24.479] [INFO] http - POST /gapi/dpqiandao/getInfoDp - 154
+[2019-12-19T19:52:25.043] [INFO] http - POST /gapi/dpqiandao/getAwardResult - 37
+[2019-12-19T19:52:25.052] [INFO] http - POST /gapi/dpqiandao/getAwardResultCount - 21
+[2019-12-19T19:52:26.216] [INFO] http - GET /gapi/dpgames/dpcounter/1/getInfoDp - 145
+[2019-12-19T19:52:45.148] [INFO] http - GET /gapi/dpgames/dpcounter/1/getInfoDp - 552
+[2019-12-19T19:52:45.785] [INFO] http - POST /gapi/dpqiandao/getInfoDp - 94
+[2019-12-19T19:52:46.249] [INFO] http - POST /gapi/dpqiandao/getAwardResult - 18
+[2019-12-19T19:52:46.263] [INFO] http - POST /gapi/dpqiandao/getAwardResultCount - 8

@@ -1,0 +1,26 @@
+1.  关于websocket性能测试
+https://blog.csdn.net/minmintju/article/details/74941445
+
+2. websocket 测试工具 ws-benchmark
+https://www.npmjs.com/package/ws-benchmark
+
+https://www.npmjs.com/package/websocket-bench-iamisti
+
+
+3. 测试框架
+Mocha
+http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html
+
+jasmine
+
+Karma
+https://www.npmjs.com/package/karma
+
+
+4. 关于大数据量的测试
+a. 一款游戏，创建10000个
+b. 一个游戏，玩100局
+c. 一局游戏，1000玩家
+d. 一个玩家，1000次成绩
+
+测试在上述条件的数据的访问数据情况。

@@ -1,0 +1,39 @@
+{
+  "presets": [
+    ["env", {
+      "targets": { "browsers": ["Chrome>=60","ios>=9"]  },
+      "modules": false
+    }],
+    "stage-2"
+  ],
+  "plugins": [
+    ["transform-runtime", {
+      "helpers": true, // defaults to true
+      "polyfill": true, // defaults to true
+      "regenerator": true, // defaults to true
+      "moduleName": "babel-runtime" // defaults to "babel-runtime"
+    }]
+  ],
+  "comments": false,
+  "env": {
+    "production": {
+      "presets": [
+        ["env", {
+          "targets": { "browsers": ["Chrome>=60","ios>=9"]  },
+          "modules": false
+        }],
+        "stage-2"
+      ]
+    },
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"],
+      "presets": [
+        ["env", {
+          "targets": {
+            "node": "current"
+          }
+        }]
+      ]
+    }
+  }
+}

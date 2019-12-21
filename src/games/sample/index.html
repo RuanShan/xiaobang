@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+  <meta content="no-cache" http-equiv="pragma">
+  <meta content="0" http-equiv="expires">
+  <meta name="referrer" content="always">
+  <meta content="telephone=no, address=no" name="format-detection">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- apple devices fullscreen -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>H5游戏</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+  <style type="text/css">
+  #preloadPage {
+    background: #fff;
+    z-index: 99999;
+    color: #000;
+    font-size: 14px;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    position: fixed;
+  }
+  .leftClose {
+      animation: leftClose .3s 1 forwards;
+      -webkit-animation: leftClose .3s 1 forwards;
+  }
+  .bg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+  }
+  .spinner {
+      margin: 5.75rem auto 1.25rem;
+      width: 4rem;
+      height: 4rem;
+      position: relative;
+  }
+  #preloadPage .info {
+      line-height: .7rem;
+      width: 100%;
+      height: .7rem;
+      color: #333;
+      text-align: center;
+      font-size: .6rem;
+  }
+   #newInformBtn{  display: none;   }
+   .attentionBox{   }
+   #drawMenuBtnBox{ background-color: transparent;}
+   #drawMenuBtnBox .resule-button{ background: #E83828;  }
+   .resule-foot-box .resule-button{ border-radius: 1rem;}
+   #explainBox * { color: #fff; }
+   #explainBox .mainTitle { color: #000; }
+  </style>
+
+  <script type='text/javascript'>
+
+    var g_serverTime = 1546852399916;
+    var g_timeDeviation = g_serverTime - new Date().getTime(); //服务器时间与系统时间偏差
+    var g_rem = 20;
+    (function(win) {
+      var orientationX = false; //是否横屏进来
+      if (win.orientation == 90 || win.orientation == -90) {
+        orientationX = true;
+      }
+      var docEl = win.document.documentElement,
+        tid;
+
+      function refreshRem1() {
+        g_rem = docEl.getBoundingClientRect().width / 16;
+        !g_rem && (g_rem = 20);
+        docEl.style.fontSize = g_rem + 'px';
+      }
+
+      function refreshRem2() {
+        g_rem = docEl.getBoundingClientRect().width / 16;
+        if (!g_rem) {
+          return refreshRem1();
+        }
+        var width = docEl.getBoundingClientRect().width;
+        var d = win.document.createElement('div');
+        d.style.width = '1rem';
+        d.style.display = "none";
+        docEl.firstElementChild.appendChild(d);
+        var defaultFontSize = parseFloat(window.getComputedStyle(d, null).getPropertyValue('width'));
+        docEl.firstElementChild.removeChild(d);
+        docEl.style.fontSize = (g_rem / defaultFontSize) * 100 + '%';
+      }
+      var refreshRem = /vivo|HUAWEI|OPPO|ONEPLUS A5000/i.test(navigator.userAgent) ? refreshRem2 : refreshRem1;
+      try {
+        win.addEventListener("orientationchange", function() { //触发手机横屏竖屏事件
+          if (orientationX) {
+            location.reload();
+          }
+        }, false);
+      } catch (e) {}
+      win.addEventListener('pageshow', function(e) {
+        if (e.persisted) {
+          clearTimeout(tid);
+          tid = setTimeout(refreshRem, 100);
+        }
+      }, false);
+      refreshRem();
+    })(window);
+  </script>
+
+  <script type='text/javascript'>
+    ;
+    (function() {
+      var fList = ["WeixinJSBridge", "document.querySelector('#btnOk').click", "document.querySelector('.msg').innerText"];
+      var filter = function() {
+        var oldErr = window.onerror;
+        if (!oldErr) return;
+        window.onerror = function(msg) {
+          for (var i = 0; i < fList.length; i++) {
+            if (~msg.indexOf(fList[i])) {
+              return
+            }
+          }
+          oldErr.apply(this, arguments)
+        }
+      };
+      window.onerror ? filter() : (document.getElementsByTagName("script")[0].onload = filter);
+    })();
+  </script>
+</head>
+
+<body class="gameTpl_-1 version3 ">
+
+
+  <!-- loading页面 -->
+  <div id="preloadPage" class="bg"  >
+
+    <div class="spinner">
+      <div class="spinner-container container1">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+      <div class="spinner-container container2">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+      <div class="spinner-container container3">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+    </div>
+
+    <div class="info"><span id="loadPercent">0</span>%</div>
+    <div id="userPreload"  ></div>
+  </div>
+  <script type="text/javascript">
+    (function() {
+      var _hasInit = false;
+      var _hasFinish = false;
+      var _hasStrting = false;
+      var percentText = document.getElementById('loadPercent');
+      var endCallback;
+
+      function _setPercentage(percent) {
+        percentText.innerText = percent
+      }
+
+      function _initCustomPreLoad(callback) {
+        var logoImg = document.getElementById('preloadImg');
+
+        function initLogoImg() {
+          var img = logoImg;
+          var h = img.height;
+          var w = img.width;
+          var bottomPageInfoDeg = -Math.atan(w / h) - Math.PI / 2;
+          var canvas = document.getElementById('preloadCanvas');
+          var ctx = canvas.getContext('2d');
+          var ratio = (window.devicePixelRatio || 1) / (ctx.backingStorePixelRatio || ctx.webkitBackingStorePixelRatio || ctx.mozBackingStorePixelRatio || ctx.msBackingStorePixelRatio || ctx.oBackingStorePixelRatio || ctx.backingStorePixelRatio ||
+            1);
+          var drawImg = function() {
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillRect(0.2 * g_rem * ratio, 0.2 * g_rem * ratio, w * ratio, h * ratio);
+            ctx.drawImage(img, 0.2 * g_rem * ratio, 0.2 * g_rem * ratio, w * ratio, h * ratio)
+          };
+          if (h === w) {
+            if (h > 3.5 * g_rem) {
+              h = w = 3.5 * g_rem
+            }
+            drawImg = function() {
+              ctx.save();
+              ctx.beginPath();
+              ctx.arc(canvas.width / 2, canvas.height / 2, w / 2 * ratio, 0, 2 * Math.PI);
+              ctx.clip();
+              ctx.fillStyle = '#FFFFFF';
+              ctx.fill();
+              ctx.drawImage(img, 0.2 * g_rem * ratio, 0.2 * g_rem * ratio, w * ratio, h * ratio);
+              ctx.restore()
+            }
+          } else {
+            if (w > h && w > 8 * g_rem) {
+              h = 8 * g_rem * h / w;
+              w = 8 * g_rem
+            } else {
+              if (h > w && h > 8 * g_rem) {
+                w = 8 * g_rem * w / h;
+                h = 8 * g_rem
+              }
+            }
+          }
+          canvas.width = (w + 0.4 * g_rem) * ratio;
+          canvas.height = (h + 0.4 * g_rem) * ratio;
+          canvas.style.width = w + 0.4 * g_rem + 'px';
+          canvas.style.height = h + 0.4 * g_rem + 'px';
+          if (h === w) {
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2, 0, 2 * Math.PI);
+            ctx.clip()
+          }
+          ctx.strokeStyle = '#69C5FF';
+          ctx.lineWidth = 8 * g_rem * ratio;
+          _setPercentage = function(percent) {
+            percentText.innerText = percent;
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2, canvas.height / 2, 4 * g_rem * ratio, bottomPageInfoDeg, bottomPageInfoDeg + percent * (2 * Math.PI / 100));
+            ctx.stroke();
+            drawImg()
+          };
+          callback && callback()
+        }
+        if (logoImg.complete) {
+          initLogoImg()
+        } else {
+          logoImg.onload = initLogoImg
+        }
+      }
+
+      function init(callback) {
+        var preloadStyle = 1;
+        if (_hasInit) return finish();
+
+        function finish() {
+          callback && callback();
+          if (!_hasInit) {
+            _setPercentage(0);
+            _hasInit = true
+          }
+        }
+        window.scrollTo(0, 0);
+        if (preloadStyle === 3) _initCustomPreLoad(finish);
+        if (preloadStyle === 1) finish()
+      }
+
+      function start() {
+        if (_hasStrting) return;
+        init(function() {
+          _hasStrting = true;
+          _hasFinish = false;
+          var percent = 0;
+
+          function go() {
+            var time = 1000 / 60;
+            time *= _hasFinish ? 3 : Math.max(3, percent / 10);
+            if (percent === 99 && _hasFinish) {
+              _setPercentage(100);
+              _hasStrting = false;
+              if (endCallback) {
+                endCallback();
+                endCallback = null
+              }
+              var preloadPage = document.getElementById('preloadPage');
+              setTimeout(function() {
+                preloadPage.style.display = 'none'
+              }, 500);
+              preloadPage.className += ' leftClose';
+              return
+            }
+            setTimeout(function() {
+              var prevPercent = percent;
+              percent = Math.min(percent + (_hasFinish ? 8 : 1), 99);
+              if (prevPercent !== percent) {
+                _setPercentage(percent)
+              }
+              go()
+            }, time)
+          }
+          go()
+        })
+      }
+
+      function end(callback) {
+        console.log( "preloadEnd end")
+        if (_hasFinish) return;
+        if (!_hasStrting) return;
+        init(function() {
+          _hasFinish = true;
+          endCallback = callback
+        })
+      }
+      start();
+      window.preloadEnd = end
+    })();
+  </script>
+  <!-- 广告页 -->
+  <div class="advertisingBox swiper-container hide">
+    <div class="swiper-wrapper">
+      <!--内容自动添加-->
+    </div>
+    <div class="swiper-pagination hide"></div>
+
+    <div class="skipTips hide">
+      <span class="seconds"></span>
+      <span class="skipTipsText"></span>
+    </div>
+
+  </div>
+  <div class="ajaxLoadBg">
+    <div class="ajaxLoadBar "></div>
+  </div>
+  <div class="body">
+    <div id="app"></div>
+
+    <!-- 存放openId的节点 -->
+    <div id="pageMusic" style="position:absolute;top:0;height:0;"></div>
+
+    <div id="informBox" class="bg hide">
+      <div id="inform-reason-page">
+        <div class="weui-cells__title">请选择投诉原因</div>
+        <div class="weui-cells weui-cells_radio" id="inform-reason-box">
+          <label class="weui-cell weui-check__label reasonItem" for="temptShare" _index="0">
+                <div class="weui-cell__bd">
+                    <p>诱导分享</p>
+                </div>
+                <div class="weui-cell__ft">
+                    <input type="radio" class="weui-check" name="radio1" id="temptShare">
+                    <span class="weui-icon-checked"></span>
+                </div>
+            </label>
+          <label class="weui-cell weui-check__label reasonItem" for="shamActive" _index="1">
+                <div class="weui-cell__bd">
+                    <p>虚假活动</p>
+                </div>
+                <div class="weui-cell__ft">
+                    <input type="radio" name="radio1" class="weui-check" id="shamActive">
+                    <span class="weui-icon-checked"></span>
+                </div>
+            </label>
+          <label class="weui-cell weui-check__label reasonItem" for="political" _index="2">
+                <div class="weui-cell__bd">
+                    <p>政治敏感</p>
+                </div>
+                <div class="weui-cell__ft">
+                    <input type="radio" class="weui-check" name="radio1" id="political">
+                    <span class="weui-icon-checked"></span>
+                </div>
+            </label>
+          <label class="weui-cell weui-check__label reasonItem" for="eroticism" _index="3">
+                <div class="weui-cell__bd">
+                    <p>色情低俗</p>
+                </div>
+                <div class="weui-cell__ft">
+                    <input type="radio" name="radio1" class="weui-check" id="eroticism">
+                    <span class="weui-icon-checked"></span>
+                </div>
+            </label>
+          <label class="weui-cell weui-check__label reasonItem" for="rumor" _index="4">
+                <div class="weui-cell__bd">
+                    <p>谣言</p>
+                </div>
+                <div class="weui-cell__ft">
+                    <input type="radio" class="weui-check" name="radio1" id="rumor">
+                    <span class="weui-icon-checked"></span>
+                </div>
+            </label>
+          <label class="weui-cell weui-check__label reasonItem" for="otherReason" _index="5">
+                <div class="weui-cell__bd">
+                    <p>其他（收集隐私信息等）</p>
+                </div>
+                <div class="weui-cell__ft">
+                    <input type="radio" name="radio1" class="weui-check" id="otherReason">
+                    <span class="weui-icon-checked"></span>
+                </div>
+            </label>
+        </div>
+        <div id="cancel-inform-btn" ontouchend="hg.fire('scrollEvent',true);">取消</div>
+        <div id="next-inform-btn" class="weui-btn weui-btn_primary hide">下一步</div>
+        <div id="inform-poup-tip" class="hide">投诉成功</div>
+      </div>
+      <div id="inform-desc-page" style="display: none;">
+        <div class="weui-cells__title">投诉描述</div>
+        <div class="weui-cells weui-cells_form">
+          <div class="weui-cell" id="inform-desc-box">
+            <div class="weui-cell__bd">
+              <textarea class="weui-textarea" id="informDesc" placeholder="请输入文本" rows="4"></textarea>
+              <div class="weui-textarea-counter" id="informDesc-counter"><span>0</span>/50</div>
+            </div>
+          </div>
+        </div>
+        <div id="submit-inform-btn" class="weui-btn weui-btn_primary">提交</div>
+      </div>
+    </div>
+    <div id="informResultBox" class="bg hide weui">
+      <div class="weui-msg">
+        <div class="weui-msg__icon-area"><i class="weui-icon-success weui-icon_msg"></i></div>
+        <div class="weui-msg__text-area">
+          <h2 class="weui-msg__title">投诉成功</h2>
+          <p class="weui-msg__desc">感谢你的参与，我们坚决反对色情、暴力、欺诈等违规信息，我们会认真处理你的投诉，维护绿色、健康的网络环境</p>
+        </div>
+        <div class="weui-msg__opr-area" ontouchend="hg.fire('scrollEvent',true);">
+          <p class="weui-btn-area">
+            <a class="confirm-btn weui-btn weui-btn_primary">确定</a>
+          </p>
+        </div>
+        <div class="weui-msg__extra-area">
+          <div class="weui-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="homeBtnBox specialBottom">
+
+
+      <div id="myAwardBtn" onclick="HdGame.changePoup(3,'',true)" style="display:none;"><span class='redDot'></span></div>
+      <!--<div id="informBtn" ontouchend="HdGame.changePoup(5,'',true)">-->
+
+      <!--    <span>投诉</span>-->
+    </div>
+  </div>
+
+
+  <div class="slogan editTarget-slogan hide pointer-events layer">软山互动-营销推广必备神器</div>
+
+  <div id="skillSupMask" class="homePoupMask">
+  </div>
+
+  </div>
+
+</body>
+
+</html>

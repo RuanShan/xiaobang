@@ -1,0 +1,21 @@
+INSERT INTO car_game_rounds(id, name,state,start_at,end_at,duration,code,appid,contact_required,number,`desc`, award_desc, created_at,updated_at)
+SELECT id, name, 'completed',open_at,close_at,30,'car',appid,contact_required,substring(MD5(RAND()),1,20),`desc`, award_desc, created_at,updated_at FROM game_rounds;
+
+
+INSERT INTO car_game_players(id, openid, game_round_id, nickname, score,max_score,avatar,cellphone,realname,token,share_code, created_at,updated_at)
+SELECT id,openid,game_round_id,nickname,score,max_score,avatar,cellphone,realname,score_token,substring(MD5(RAND()),1,20), created_at,updated_at FROM game_players;
+
+
+INSERT INTO car_game_results(id,game_round_id,game_player_id,to_game_player_id,score,created_at,updated_at,ip)
+SELECT id,game_round_id,game_player_id,0,score,created_at,updated_at,ip from game_results;
+
+INSERT INTO dpyiy_game_rounds(id, name,state,start_at,end_at,duration,code,appid,contact_required,number,`desc`, award_desc, created_at,updated_at)
+SELECT id, name, 'completed',open_at,close_at,30,'dpyiy',appid,contact_required,substring(MD5(RAND()),1,20),`desc`, award_desc, created_at,updated_at FROM game_rounds;
+
+
+INSERT INTO dpyiy_game_players(id, openid, game_round_id, nickname, score,max_score,avatar,cellphone,realname,token, created_at,updated_at)
+SELECT id,openid,game_round_id,nickname,score,max_score,avatar,cellphone,realname,score_token, created_at,updated_at FROM game_players;
+
+
+INSERT INTO dpyiy_game_results(id,game_round_id,game_player_id,to_game_player_id,score,created_at,updated_at)
+SELECT id,game_round_id,game_player_id,0,score,created_at,updated_at from game_results;

@@ -1,0 +1,119 @@
+/* 常用 css类 */
+.hide {
+  display: none
+}
+
+.hideImp {
+  display: none !important
+}
+
+.showImp {
+  display: block !important
+}
+
+.initHide {
+  display: none !important
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
+  height: 100%
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+.pointer{
+  cursor: pointer;
+}
+
+.pd6 {
+  padding: 6px;
+}
+.pd12 {
+  padding: 12px;
+}
+.pd-tb6 {
+  padding: 6px 0;
+}
+.pd-lr6 {
+  padding: 0 6px;
+}
+.mg6{
+  margin: 6px;
+}
+.mg-rl6{
+  margin: 0 6px;
+}
+.tac{
+  text-align: center;
+}
+.alignCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.alignCenter_t {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%)
+}
+
+.alignCenter_l {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%)
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.ftl{
+  font-size: large;
+}
+.ftm{
+  font-size: medium;
+}
+.f-ftxl{
+  font-size: x-large;
+}
+.imgbg{
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  color: transparent;
+  border-width: 0;
+  outline: 0;
+  -webkit-appearance: none;
+}
+.imgbg:active{
+  background-color: transparent;
+  color: transparent;
+}
+
+::-webkit-scrollbar {
+  display: none
+}
+
+.clearfix:after {
+  clear: both;
+  display: block;
+  height: 0;
+  content: ''
+}
+
+.overlay{
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .7)
+}
