@@ -9,6 +9,7 @@ body{
     line-height: 50px;
     text-align: center;
     color: white;
+    border-radius: 5px 5px 0 0;
 }
 
 #from {
@@ -30,7 +31,9 @@ body{
   background-color: #8ec31f;
   margin-bottom: 32px;
 }
-
+#new_message_form  weui-cells__title{
+  fo
+}
 #new_message_form  .weui-cell_select {
     padding: 16px;
 }
