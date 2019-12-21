@@ -1,6 +1,6 @@
 module.exports = {
   apps : [{
-    name: '小邦',
+    name: 'xiaobang:8097',
     script: 'server/main.js',
 
     // Options reference: https://pm2.io/doc/en/runtime/reference/ecosystem-file/
