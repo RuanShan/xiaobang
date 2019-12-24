@@ -22,7 +22,7 @@ console.debug("transporter config",config);
 var sendmail = function(message, html){
     var option = {
         from:"no-reply@getstore.cn",
-        to:"debug@getstore.cn"
+        to:"haoguang20@163.com"
     }
     option.subject = "报修："+ message.title
     option.html= html;
