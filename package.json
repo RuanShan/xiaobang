@@ -40,7 +40,7 @@
     "handlebars": "^4.2.0",
     "ioredis": "^4.11.2",
     "jimp": "^0.8.4",
-    "jquery": "^3.4.0",
+    "jquery": "^3.5.0",
     "jquery.qrcode": "^1.0.3",
     "jsonwebtoken": "^8.5.1",
     "kind-of": "^6.0.2",
