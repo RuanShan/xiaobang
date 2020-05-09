@@ -43,7 +43,7 @@
     "jquery": "^3.4.0",
     "jquery.qrcode": "^1.0.3",
     "jsonwebtoken": "^8.5.1",
-    "kind-of": "^6.0.2",
+    "kind-of": "^6.0.3",
     "koa": "^2.5.3",
     "koa-bodyparser": "^4.2.0",
     "koa-handlebars": "^2.0.0",
