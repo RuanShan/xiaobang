@@ -71,7 +71,7 @@
     "qrcode": "^1.4.1",
     "query-string": "^4.2.3",
     "raw-body": "^2.4.1",
-    "sequelize": "^4.44.3",
+    "sequelize": "^5.15.1",
     "sequelize-hierarchy": "^2.0.4",
     "sequelize-querystring-converter": "^1.0.3",
     "socket.io": "^2.2.0",
