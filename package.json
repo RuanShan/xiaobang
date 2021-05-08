@@ -37,7 +37,7 @@
     "es-wechat-open-api": "^1.0.0",
     "fs": "^0.0.1-security",
     "fs-extra": "^8.1.0",
-    "handlebars": "^4.2.0",
+    "handlebars": "^4.7.7",
     "ioredis": "^4.11.2",
     "jimp": "^0.8.4",
     "jquery": "^3.4.0",
