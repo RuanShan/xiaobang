@@ -81,7 +81,7 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^2.4.0",
     "supertest": "^3.0.0",
-    "swiper": "^4.5.0",
+    "swiper": "^6.5.1",
     "to-string-loader": "^1.1.5",
     "vue": "2.6.4",
     "vue-bscroll": "^1.0.4",
