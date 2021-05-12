@@ -64,7 +64,7 @@
     "moment": "^2.24.0",
     "mysql2": "^1.6.0",
     "node-fetch": "^2.6.0",
-    "nodemailer": "^6.3.1",
+    "nodemailer": "^6.4.16",
     "pixel-diff": "^1.0.1",
     "pixelmatch": "^5.1.0",
     "pm2": "^2.10.1",
